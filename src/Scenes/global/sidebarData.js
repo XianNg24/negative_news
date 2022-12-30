@@ -1,7 +1,7 @@
 export const sidebarData = [
     {
       title: "Home",
-      path: "/",
+      path: "/negative_news",
       icon: "home",
     },
     {

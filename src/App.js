@@ -18,9 +18,9 @@ function App() {
         <MuiThemeProvider theme={muiTheme}>
           <Topbar />
           <Switch>
-            <Route path="/" exact component={Home} />
+            <Route path="/negative_news" exact component={Home} />
             <Route path="/about" component={About} />
-            <Route path="/Content" component={Content} />
+            <Route path="/content" component={Content} />
           </Switch>
         </MuiThemeProvider>
       </Router>
