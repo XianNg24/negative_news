@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/negative_news/static/css/main.e48c95cf.css",
-    "main.js": "/negative_news/static/js/main.89cd7020.js",
+    "main.js": "/negative_news/static/js/main.cea0dfd0.js",
     "static/js/377.9e469038.chunk.js": "/negative_news/static/js/377.9e469038.chunk.js",
     "static/media/deloitte.png": "/negative_news/static/media/deloitte.1c67d1eb5e85032eba54.png",
     "static/media/Reuters_logo.png": "/negative_news/static/media/Reuters_logo.67777e7a421d64c21a46.png",
     "static/media/Bloomberg_logo.png": "/negative_news/static/media/Bloomberg_logo.f1e00af7f6f214c42812.png",
     "index.html": "/negative_news/index.html",
     "main.e48c95cf.css.map": "/negative_news/static/css/main.e48c95cf.css.map",
-    "main.89cd7020.js.map": "/negative_news/static/js/main.89cd7020.js.map",
+    "main.cea0dfd0.js.map": "/negative_news/static/js/main.cea0dfd0.js.map",
     "377.9e469038.chunk.js.map": "/negative_news/static/js/377.9e469038.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e48c95cf.css",
-    "static/js/main.89cd7020.js"
+    "static/js/main.cea0dfd0.js"
   ]
 }
