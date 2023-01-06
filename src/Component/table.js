@@ -98,7 +98,8 @@ Row.propTypes = {
     entity_sentiment_key: PropTypes.arrayOf(PropTypes.string).isRequired,
     entity_sentiment_value: PropTypes.arrayOf(PropTypes.number).isRequired,
     similar_news: PropTypes.arrayOf(PropTypes.number).isRequired,
-    summary: PropTypes.string.isRequired
+    summary: PropTypes.string.isRequired,
+    classification_result: PropTypes.string.isRequired
   }).isRequired,
 };
 /*
@@ -226,7 +227,7 @@ function Row(props) {
         </StyledTableCell>
         <StyledTableCell>
           <Box className="text-sm font-medium text-gray-600">
-            {row.newsCategory}
+            {row.source === "Bloomberg"? row.newsCategory  : (row.newsCategory === row.classification_result? row.newsCategory : row.newsCategory + ', ' +  row.classification_result)}
           </Box>
         </StyledTableCell>
         <StyledTableCell width="30%">
@@ -412,7 +413,6 @@ export default function EnhancedTable() {
   }); 
     
   const handleValueChange = (newValue) => {
-    if(newValue.startDate == null) newValue ={startDate: new Date('2022-10-6'), endDate: new Date('2022-10-17')}
     setValue(newValue); 
     const filteredRows = json_data.filter((row) => {
       var newDate = formatDate(row.releaseDate)
@@ -420,7 +420,8 @@ export default function EnhancedTable() {
     });
     setRows(filteredRows);
     setNewRows(filteredRows)
-  }
+  } 
+
 
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
@@ -428,7 +429,8 @@ export default function EnhancedTable() {
 
   return (
     <Box sx={{ width: '100%' }}>
-      <div style = {{
+      <Paper sx={{ width: '100%', mb: 2 }}>
+        <div style = {{
           display: "flex"
         }}>
           <div style={{
@@ -458,7 +460,6 @@ export default function EnhancedTable() {
           />
           </div>
         </div>
-      <Paper sx={{ width: '100%', mb: 2 }}>
         <TableContainer>
             <Table aria-label="collapsible table" style={{overflowX: "hidden",overflowY: "hidden"}}>
             <TableHead>
@@ -468,7 +469,7 @@ export default function EnhancedTable() {
                 <StyledTableCell>Date</StyledTableCell>
                 <StyledTableCell>Title</StyledTableCell>
                 <StyledTableCell>Source</StyledTableCell>
-                <StyledTableCell>Label</StyledTableCell>
+                <StyledTableCell>Labels</StyledTableCell>
                 <StyledTableCell>Top 3 Entities</StyledTableCell>
                 <StyledTableCell>Sentiment</StyledTableCell>
               </TableRow>
